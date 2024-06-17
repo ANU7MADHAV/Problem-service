@@ -21,7 +21,7 @@ const problemSchema = mongoose.Schema({
         required: true,
       },
       output: {
-        type: String,
+        type: String, 
         required: true,
       },
     },
