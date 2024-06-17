@@ -1,4 +1,4 @@
-import BaseError from "../erros/base.error";
+import BaseError from "../erros/base.error.js";
 import { StatusCodes } from "http-status-codes";
 
 const errorHandler = (err, req, res, next) => {
