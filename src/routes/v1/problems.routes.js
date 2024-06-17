@@ -11,7 +11,6 @@ problemRouter.get("/:id", problem.getProblems);
 
 problemRouter.post("/:id", problem.addProblem);
 
-problemRouter.delete("/:id",problem.deleteProblem)
-
+problemRouter.delete("/:id", problem.deleteProblem);
 
 export default problemRouter;
