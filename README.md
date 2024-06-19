@@ -7,7 +7,7 @@ To set up the project on your local machine do the following steps:
 
 1. Clone the project
 ```
-git clone https://github.com/singhsanket143/AlgoCode-Problem-Service.git
+git clone https://github.com/ANU7MADHAV/Problem-service
 ```
 
 2. Go inside the downloaded folder and install node modules
