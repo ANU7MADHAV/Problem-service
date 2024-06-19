@@ -17,6 +17,25 @@ class ProblemService {
       throw error;
     }
   }
+  async getProblem(id) {
+    try {
+      const problem = await this.problemRepository.getProblem(id);
+      return problem;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async updateProblem() {
+    try {
+      const update = await this.problemRepository.updateProblem(
+        id,
+        problemData
+      );
+      return update;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default ProblemService;
