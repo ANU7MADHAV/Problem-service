@@ -55,10 +55,18 @@ export const getProblems = async (req, res) => {
   }
 };
 
-export const deleteProblem = (req, res) => {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not implemented",
-  });
+export const deleteProblem = async (req, res) => {
+  try {
+    const problem = await problemService.deleteProblem(req.params.id);
+    return res.status(StatusCodes.OK).json({
+      success: true,
+      error: {},
+      message: "Successfully fetched a problem",
+      data: problem,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const updateProblem = (req, res) => {
