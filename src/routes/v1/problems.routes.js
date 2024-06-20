@@ -5,11 +5,13 @@ const problemRouter = express.Router();
 
 problemRouter.get("/ping", problem.pingProblemController);
 
+problemRouter.get("/", problem.getProblem);
+
 problemRouter.get("/:id", problem.getProblem);
 
-problemRouter.get("/:id", problem.getProblems);
+problemRouter.post("/create", problem.addProblem);
 
-problemRouter.post("/:id", problem.addProblem);
+problemRouter.put("/:id", problem.updateProblem);
 
 problemRouter.delete("/:id", problem.deleteProblem);
 

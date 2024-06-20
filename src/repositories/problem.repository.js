@@ -8,6 +8,9 @@ class ProblemRepository {
         description: problemData.description,
         testCases: problemData.testCases ? problemData.testCases : [],
       });
+      if (!problem) {
+        return new Error();
+      }
       return problem;
     } catch (error) {
       console.log(error);

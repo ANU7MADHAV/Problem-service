@@ -1,4 +1,4 @@
-import sanitizeMarkdownContent from "../utils/markdownSanitizer";
+import sanitizeMarkdownContent from "../utils/markdownSanitizer.js";
 
 class ProblemService {
   constructor(ProblemRepository) {

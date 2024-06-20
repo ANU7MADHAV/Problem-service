@@ -21,14 +21,13 @@ const problemSchema = mongoose.Schema({
         required: true,
       },
       output: {
-        type: String, 
+        type: String,
         required: true,
       },
     },
   ],
   editorial: {
     type: String,
-    required: true,
   },
 });
 
