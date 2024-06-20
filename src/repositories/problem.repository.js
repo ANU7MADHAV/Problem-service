@@ -19,11 +19,11 @@ class ProblemRepository {
   }
   async getProblems() {
     try {
-      const probelms = await Problem.find();
-      if (!problem) {
+      const problems = await Problem.find();
+      if (!problems) {
         throw new NotFound("Problem", id);
       }
-      return probelms;
+      return problems;
     } catch (error) {
       console.log(error);
     }
@@ -49,6 +49,16 @@ class ProblemRepository {
         throw new NotFound("Problem", id);
       }
       return updateProblem;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async deleteProblem(id) {
+    try {
+      const problem = await Problem.deleteOne(id);
+      if (!problem) {
+        throw new NotFound("Problem", id);
+      }
     } catch (error) {
       console.log(error);
     }
