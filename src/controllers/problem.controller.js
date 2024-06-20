@@ -41,36 +41,51 @@ export const getProblem = async (req, res, next) => {
   }
 };
 
-export const getProblems = async (req, res) => {
+export const getProblems = async (req, res, next) => {
   try {
     const problems = await problemService.getProblems();
     return res.status(StatusCodes.OK).json({
       success: true,
       error: {},
-      message: "Successfully fetched a problem",
+      message: "Successfully fetched  problems",
       data: problems,
     });
   } catch (error) {
     console.log(error);
+    next(error);
   }
 };
 
-export const deleteProblem = async (req, res) => {
+export const deleteProblem = async (req, res, next) => {
   try {
     const problem = await problemService.deleteProblem(req.params.id);
     return res.status(StatusCodes.OK).json({
       success: true,
       error: {},
-      message: "Successfully fetched a problem",
+      message: "Successfully deleted a problem",
       data: problem,
     });
   } catch (error) {
     console.log(error);
+    next(error);
   }
 };
 
-export const updateProblem = (req, res) => {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not implemented",
-  });
+export const updateProblem = async (req, res, next) => {
+  try {
+    console.log("params", req.params.id);
+    const updateProblem = await problemService.updateProblem(
+      req.params.id,
+      req.body
+    );
+    return res.status(StatusCodes.OK).json({
+      success: true,
+      error: {},
+      message: "Successfully fetched a problem",
+      data: updateProblem,
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 };

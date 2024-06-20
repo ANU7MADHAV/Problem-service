@@ -32,7 +32,7 @@ class ProblemService {
     }
   }
 
-  async updateProblem() {
+  async updateProblem(id, problemData) {
     try {
       const update = await this.problemRepository.updateProblem(
         id,

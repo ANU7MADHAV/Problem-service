@@ -47,7 +47,7 @@ class ProblemRepository {
       const updateProblem = await Problem.findByIdAndUpdate(id, problemData, {
         new: true,
       });
-      if (!updatedProblem) {
+      if (!updateProblem) {
         throw new NotFound("Problem", id);
       }
       return updateProblem;
