@@ -17,6 +17,12 @@ class ProblemService {
       throw error;
     }
   }
+
+  async getProblems() {
+    const probelms = await this.problemRepository.getProblems();
+    return probelms;
+  }
+
   async getProblem(id) {
     try {
       const problem = await this.problemRepository.getProblem(id);
@@ -25,6 +31,7 @@ class ProblemService {
       console.log(error);
     }
   }
+
   async updateProblem() {
     try {
       const update = await this.problemRepository.updateProblem(

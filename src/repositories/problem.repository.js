@@ -17,6 +17,17 @@ class ProblemRepository {
       throw error;
     }
   }
+  async getProblems() {
+    try {
+      const probelms = await Problem.find();
+      if (!problem) {
+        throw new NotFound("Problem", id);
+      }
+      return probelms;
+    } catch (error) {
+      console.log(error);
+    }
+  }
   async getProblem(id) {
     try {
       const problem = await Problem.findById(id);

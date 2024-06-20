@@ -41,10 +41,18 @@ export const getProblem = async (req, res, next) => {
   }
 };
 
-export const getProblems = (req, res) => {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not implemented",
-  });
+export const getProblems = async (req, res) => {
+  try {
+    const problems = await problemService.getProblems();
+    return res.status(StatusCodes.OK).json({
+      success: true,
+      error: {},
+      message: "Successfully fetched a problem",
+      data: problems,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const deleteProblem = (req, res) => {
