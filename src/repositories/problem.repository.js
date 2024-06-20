@@ -17,10 +17,7 @@ class ProblemRepository {
       throw error;
     }
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> Feature_setup_MVC_api_Problems_
   async getProblems() {
     try {
       const problems = await Problem.find();
@@ -32,10 +29,7 @@ class ProblemRepository {
       console.log(error);
     }
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> Feature_setup_MVC_api_Problems_
   async getProblem(id) {
     try {
       const problem = await Problem.findById(id);
@@ -61,17 +55,14 @@ class ProblemRepository {
       console.log(error);
     }
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> Feature_setup_MVC_api_Problems_
   async deleteProblem(id) {
     try {
       const problem = await Problem.deleteOne(id);
       if (!problem) {
         throw new NotFound("Problem", id);
       }
-      return problem
+      return problem;
     } catch (error) {
       console.log(error);
     }
