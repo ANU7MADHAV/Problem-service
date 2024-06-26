@@ -14,7 +14,7 @@ git clone https://github.com/ANU7MADHAV/Problem-service
 2. Go inside the downloaded folder and install node modules
 
 ```
-cd AlgoCode-Problem-Service && npm install
+cd Problem-service && npm install
 ```
 
 3. Create a new .env file in the root directory and set the following env variables
